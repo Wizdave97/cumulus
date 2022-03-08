@@ -17,7 +17,7 @@ use sp_block_builder::BlockBuilder;
 use sp_blockchain::{Error as BlockChainError, HeaderBackend, HeaderMetadata};
 
 /// A type representing all RPC extensions.
-pub type RpcExtension = jsonrpc_core::IoHandler<sc_rpc::Metadata>;
+pub type RpcExtension = jsonrpc_core::MetaIoHandler<sc_rpc::Metadata>;
 
 /// Full client dependencies
 pub struct FullDeps<C, P> {
