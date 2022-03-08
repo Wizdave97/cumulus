@@ -6407,6 +6407,7 @@ dependencies = [
  "polkadot-runtime-common",
  "scale-info",
  "serde",
+ "simnode-runtime-apis",
  "smallvec",
  "sp-api",
  "sp-block-builder",
@@ -10387,6 +10388,16 @@ dependencies = [
  "num-complex",
  "num-traits",
  "paste",
+]
+
+[[package]]
+name = "simnode-runtime-apis"
+version = "0.1.0"
+source = "git+https://github.com/polytope-labs/substrate-simnode?branch=master#db8523094ea28215871270023f382c4ba2255a65"
+dependencies = [
+ "parity-scale-codec",
+ "sp-api",
+ "sp-std",
 ]
 
 [[package]]

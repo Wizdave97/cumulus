@@ -17,6 +17,7 @@ use sp_runtime::{
 	transaction_validity::{TransactionSource, TransactionValidity},
 	ApplyExtrinsicResult, MultiSignature,
 };
+use codec::Encode;
 
 use sp_std::prelude::*;
 #[cfg(feature = "std")]
@@ -282,7 +283,7 @@ impl frame_system::Config for Runtime {
 	type AccountData = pallet_balances::AccountData<Balance>;
 	/// What to do if a new account is created.
 	type OnNewAccount = ();
-	/// What to do if an account is fully reaped from the system.
+	/// What to do if an account is fully reaped from the frame_system.
 	type OnKilledAccount = ();
 	/// The weight of database operations that the runtime can invoke.
 	type DbWeight = RocksDbWeight;
@@ -609,6 +610,31 @@ impl_runtime_apis! {
 	impl cumulus_primitives_core::CollectCollationInfo<Block> for Runtime {
 		fn collect_collation_info(header: &<Block as BlockT>::Header) -> cumulus_primitives_core::CollationInfo {
 			ParachainSystem::collect_collation_info(header)
+		}
+	}
+
+	impl simnode_apis::CreateTransactionApi<Block, AccountId, Call> for Runtime {
+		fn create_transaction(call: Call, signer: AccountId) -> Vec<u8> {
+			use sp_runtime::{
+				generic::Era, MultiSignature,
+				traits::StaticLookup,
+			};
+			use sp_core::sr25519;
+			let nonce = frame_system::Pallet::<Runtime>::account_nonce(signer.clone());
+			let extra = (
+				frame_system::CheckNonZeroSender::<Runtime>::new(),
+				frame_system::CheckSpecVersion::<Runtime>::new(),
+				frame_system::CheckTxVersion::<Runtime>::new(),
+				frame_system::CheckGenesis::<Runtime>::new(),
+				frame_system::CheckEra::<Runtime>::from(Era::Immortal),
+				frame_system::CheckNonce::<Runtime>::from(nonce),
+				frame_system::CheckWeight::<Runtime>::new(),
+				pallet_transaction_payment::ChargeTransactionPayment::<Runtime>::from(0),
+			);
+			let signature = MultiSignature::from(sr25519::Signature([0u8;64]));
+			let address = AccountIdLookup::unlookup(signer);
+			let ext = UncheckedExtrinsic::new_signed(call, address, signature, extra);
+			ext.encode()
 		}
 	}
 
