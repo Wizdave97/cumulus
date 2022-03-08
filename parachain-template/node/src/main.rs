@@ -7,7 +7,7 @@ pub mod chain_spec;
 mod service;
 pub mod cli;
 mod command;
-mod rpc;
+pub mod rpc;
 
 fn main() -> sc_cli::Result<()> {
 	command::run()
