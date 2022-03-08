@@ -8,7 +8,3 @@ mod service;
 pub mod cli;
 mod command;
 pub mod rpc;
-
-fn main() -> sc_cli::Result<()> {
-	command::run()
-}
