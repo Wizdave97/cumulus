@@ -47,7 +47,7 @@ where
 	use pallet_transaction_payment_rpc::{TransactionPayment, TransactionPaymentApi};
 	use substrate_frame_rpc_system::{FullSystem, SystemApi};
 
-	let mut io = jsonrpc_core::IoHandler::default();
+	let mut io = jsonrpc_core::MetaIoHandler::default();
 	let FullDeps { client, pool, deny_unsafe } = deps;
 
 	io.extend_with(SystemApi::to_delegate(FullSystem::new(client.clone(), pool, deny_unsafe)));
