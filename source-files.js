@@ -1,4 +1,5 @@
 var N = null;var sourcesIndex = {};
+sourcesIndex["canvas_kusama_runtime"] = {"name":"","files":["constants.rs","contracts.rs","lib.rs","xcm_config.rs"]};
 sourcesIndex["cumulus_client_cli"] = {"name":"","files":["lib.rs"]};
 sourcesIndex["cumulus_client_collator"] = {"name":"","files":["lib.rs"]};
 sourcesIndex["cumulus_client_consensus_aura"] = {"name":"","files":["import_queue.rs","lib.rs"]};
@@ -14,14 +15,15 @@ sourcesIndex["cumulus_pallet_parachain_system_proc_macro"] = {"name":"","files":
 sourcesIndex["cumulus_pallet_session_benchmarking"] = {"name":"","files":["lib.rs"]};
 sourcesIndex["cumulus_pallet_solo_to_para"] = {"name":"","files":["lib.rs"]};
 sourcesIndex["cumulus_pallet_xcm"] = {"name":"","files":["lib.rs"]};
-sourcesIndex["cumulus_pallet_xcmp_queue"] = {"name":"","files":["lib.rs","migration.rs"]};
+sourcesIndex["cumulus_pallet_xcmp_queue"] = {"name":"","files":["lib.rs","migration.rs","weights.rs"]};
 sourcesIndex["cumulus_ping"] = {"name":"","files":["lib.rs"]};
 sourcesIndex["cumulus_primitives_core"] = {"name":"","files":["lib.rs"]};
 sourcesIndex["cumulus_primitives_parachain_inherent"] = {"name":"","files":["client_side.rs","lib.rs","mock.rs"]};
 sourcesIndex["cumulus_primitives_timestamp"] = {"name":"","files":["lib.rs"]};
 sourcesIndex["cumulus_primitives_utility"] = {"name":"","files":["lib.rs"]};
+sourcesIndex["cumulus_relay_chain_inprocess_interface"] = {"name":"","files":["lib.rs"]};
 sourcesIndex["cumulus_relay_chain_interface"] = {"name":"","files":["lib.rs"]};
-sourcesIndex["cumulus_relay_chain_local"] = {"name":"","files":["lib.rs"]};
+sourcesIndex["cumulus_relay_chain_rpc_interface"] = {"name":"","files":["lib.rs"]};
 sourcesIndex["cumulus_test_client"] = {"name":"","files":["block_builder.rs","lib.rs"]};
 sourcesIndex["cumulus_test_relay_sproof_builder"] = {"name":"","files":["lib.rs"]};
 sourcesIndex["cumulus_test_relay_validation_worker_provider"] = {"name":"","files":["lib.rs"]};
@@ -37,7 +39,7 @@ sourcesIndex["polkadot_collator"] = {"name":"","files":["chain_spec.rs","cli.rs"
 sourcesIndex["rococo_parachain_runtime"] = {"name":"","files":["lib.rs"]};
 sourcesIndex["seedling_runtime"] = {"name":"","files":["lib.rs"]};
 sourcesIndex["shell_runtime"] = {"name":"","files":["lib.rs","xcm_config.rs"]};
-sourcesIndex["statemine_runtime"] = {"name":"","dirs":[{"name":"weights","files":["frame_system.rs","mod.rs","pallet_assets.rs","pallet_balances.rs","pallet_collator_selection.rs","pallet_multisig.rs","pallet_proxy.rs","pallet_session.rs","pallet_timestamp.rs","pallet_uniques.rs","pallet_utility.rs"]}],"files":["constants.rs","lib.rs","xcm_config.rs"]};
-sourcesIndex["statemint_runtime"] = {"name":"","dirs":[{"name":"weights","files":["frame_system.rs","mod.rs","pallet_assets.rs","pallet_balances.rs","pallet_collator_selection.rs","pallet_multisig.rs","pallet_proxy.rs","pallet_session.rs","pallet_timestamp.rs","pallet_uniques.rs","pallet_utility.rs"]}],"files":["constants.rs","lib.rs","xcm_config.rs"]};
-sourcesIndex["westmint_runtime"] = {"name":"","dirs":[{"name":"weights","files":["frame_system.rs","mod.rs","pallet_assets.rs","pallet_balances.rs","pallet_collator_selection.rs","pallet_multisig.rs","pallet_proxy.rs","pallet_session.rs","pallet_timestamp.rs","pallet_uniques.rs","pallet_utility.rs"]}],"files":["constants.rs","lib.rs","xcm_config.rs"]};
+sourcesIndex["statemine_runtime"] = {"name":"","dirs":[{"name":"weights","files":["cumulus_pallet_xcmp_queue.rs","frame_system.rs","mod.rs","pallet_assets.rs","pallet_balances.rs","pallet_collator_selection.rs","pallet_multisig.rs","pallet_proxy.rs","pallet_session.rs","pallet_timestamp.rs","pallet_uniques.rs","pallet_utility.rs"]}],"files":["constants.rs","lib.rs","xcm_config.rs"]};
+sourcesIndex["statemint_runtime"] = {"name":"","dirs":[{"name":"weights","files":["cumulus_pallet_xcmp_queue.rs","frame_system.rs","mod.rs","pallet_assets.rs","pallet_balances.rs","pallet_collator_selection.rs","pallet_multisig.rs","pallet_proxy.rs","pallet_session.rs","pallet_timestamp.rs","pallet_uniques.rs","pallet_utility.rs"]}],"files":["constants.rs","lib.rs","xcm_config.rs"]};
+sourcesIndex["westmint_runtime"] = {"name":"","dirs":[{"name":"weights","files":["cumulus_pallet_xcmp_queue.rs","frame_system.rs","mod.rs","pallet_assets.rs","pallet_balances.rs","pallet_collator_selection.rs","pallet_multisig.rs","pallet_proxy.rs","pallet_session.rs","pallet_timestamp.rs","pallet_uniques.rs","pallet_utility.rs"]}],"files":["constants.rs","lib.rs","xcm_config.rs"]};
 createSourceSidebar();
